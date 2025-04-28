@@ -1,12 +1,21 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Hero from "@/components/home/Hero";
+import About from "@/components/home/About";
+import Menu from "@/components/home/Menu";
+import Contact from "@/components/home/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-mino-beige">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Menu />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
