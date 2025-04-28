@@ -1,84 +1,94 @@
+
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-mino-charcoal text-white">
-      <div className="mino-container py-12">
+    <footer className="bg-mino-charcoal text-white py-12">
+      <div className="mino-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1">
-            <Link to="/" className="inline-block mb-4">
-              <span className="font-serif text-2xl font-bold tracking-wider">MINO</span>
-            </Link>
-            <p className="text-white/70 mb-4">
-              Кофейня с японской эстетикой и безупречным кофе
+          <div className="md:col-span-2">
+            <img 
+              src="https://cdn.poehali.dev/files/8ef4285b-bc4d-42e0-b63a-159de1b97b2f.jpg" 
+              alt="MINO café" 
+              className="h-12 mb-4 invert"
+            />
+            <p className="text-mino-beige/70 max-w-md mb-6">
+              Место, где каждая деталь создана для того, чтобы вы могли насладиться 
+              моментом спокойствия с чашкой превосходного кофе и авторской выпечкой
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/70 hover:text-mino-green transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-mino-green transition-colors">
+                <Instagram size={20} />
               </a>
-              <a href="#" className="text-white/70 hover:text-mino-green transition-colors">
-                <Facebook className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-mino-green transition-colors">
+                <Facebook size={20} />
               </a>
-              <a href="#" className="text-white/70 hover:text-mino-green transition-colors">
-                <Twitter className="w-5 h-5" />
+              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-mino-green transition-colors">
+                <Twitter size={20} />
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="font-medium text-lg mb-4">Навигация</h3>
+            <h3 className="font-serif text-xl font-semibold mb-4">Разделы</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-white/70 hover:text-mino-green transition-colors">
+                <Link to="/" className="text-mino-beige/70 hover:text-white transition-colors">
                   Главная
                 </Link>
               </li>
               <li>
-                <Link to="/menu" className="text-white/70 hover:text-mino-green transition-colors">
+                <a href="#menu" className="text-mino-beige/70 hover:text-white transition-colors">
                   Меню
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/about" className="text-white/70 hover:text-mino-green transition-colors">
+                <a href="#about" className="text-mino-beige/70 hover:text-white transition-colors">
                   О нас
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/contact" className="text-white/70 hover:text-mino-green transition-colors">
+                <a href="#contact" className="text-mino-beige/70 hover:text-white transition-colors">
                   Контакты
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-medium text-lg mb-4">Часы работы</h3>
-            <ul className="space-y-2 text-white/70">
-              <li className="flex justify-between">
-                <span>Понедельник - Пятница</span>
-                <span>8:00 - 21:00</span>
+            <h3 className="font-serif text-xl font-semibold mb-4">Контакты</h3>
+            <ul className="space-y-2">
+              <li className="text-mino-beige/70">
+                ул. Тверская, 12<br />
+                Москва, 125009
               </li>
-              <li className="flex justify-between">
-                <span>Суббота - Воскресенье</span>
-                <span>9:00 - 22:00</span>
+              <li>
+                <a href="tel:+74951234567" className="text-mino-beige/70 hover:text-white transition-colors">
+                  +7 (495) 123-45-67
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@minocafe.ru" className="text-mino-beige/70 hover:text-white transition-colors">
+                  hello@minocafe.ru
+                </a>
               </li>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-medium text-lg mb-4">Контакты</h3>
-            <address className="not-italic text-white/70 space-y-2">
-              <p>ул. Пушкина, 10</p>
-              <p>Москва, 123456</p>
-              <p>+7 (123) 456-7890</p>
-              <p>info@mino-coffee.ru</p>
-            </address>
           </div>
         </div>
         
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/50 text-sm">
-          <p>© {new Date().getFullYear()} MINO Coffee. Все права защищены.</p>
+        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-mino-beige/50 text-sm mb-4 md:mb-0">
+            © {new Date().getFullYear()} MINO café. Все права защищены.
+          </p>
+          <div className="flex space-x-6 text-sm">
+            <a href="#" className="text-mino-beige/50 hover:text-white transition-colors">
+              Политика конфиденциальности
+            </a>
+            <a href="#" className="text-mino-beige/50 hover:text-white transition-colors">
+              Пользовательское соглашение
+            </a>
+          </div>
         </div>
       </div>
     </footer>

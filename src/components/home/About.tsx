@@ -1,41 +1,48 @@
+
 const About = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 md:py-24 bg-mino-darkBeige/20">
       <div className="mino-container">
-        <div className="text-center mb-12">
-          <h2 className="mino-heading text-3xl md:text-4xl font-bold mb-4">О кофейне MINO</h2>
-          <div className="w-24 h-1 bg-mino-green mx-auto"></div>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-mino-beige rounded-lg p-8 shadow-sm transform transition-transform hover:scale-105">
-            <div className="w-12 h-12 bg-mino-green/20 rounded-full flex items-center justify-center mb-4">
-              <span className="text-2xl">🍵</span>
-            </div>
-            <h3 className="font-serif text-xl font-bold mb-3">Японская эстетика</h3>
-            <p className="text-mino-charcoal/80">
-              Наше пространство вдохновлено японским минимализмом, создавая атмосферу спокойствия и гармонии.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="order-2 md:order-1">
+            <h2 className="mino-heading text-3xl md:text-4xl font-bold mb-6">
+              О кафе MINO
+            </h2>
+            <p className="text-mino-coffee mb-4 text-lg">
+              MINO – это не просто кафе, а особое пространство, где современный дизайн сочетается 
+              с уютной атмосферой. Мы создали место, где можно насладиться моментом спокойствия 
+              в ритме большого города.
             </p>
+            <p className="text-mino-coffee mb-6 text-lg">
+              Каждая деталь у нас продумана: от авторского кофе до интерьера в минималистичном стиле 
+              с натуральными материалами. В MINO мы ценим простоту, гармонию и внимание к мелочам.
+            </p>
+            
+            <ul className="space-y-3 mb-8">
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-mino-green rounded-full mr-3"></span>
+                <span className="text-mino-charcoal">Свежеобжаренный кофе от локальных ростеров</span>
+              </li>
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-mino-green rounded-full mr-3"></span>
+                <span className="text-mino-charcoal">Авторская выпечка, приготовленная с любовью</span>
+              </li>
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-mino-green rounded-full mr-3"></span>
+                <span className="text-mino-charcoal">Безупречный сервис и внимание к каждому гостю</span>
+              </li>
+            </ul>
           </div>
           
-          <div className="bg-mino-beige rounded-lg p-8 shadow-sm transform transition-transform hover:scale-105">
-            <div className="w-12 h-12 bg-mino-green/20 rounded-full flex items-center justify-center mb-4">
-              <span className="text-2xl">☕</span>
+          <div className="order-1 md:order-2 relative">
+            <div className="aspect-square overflow-hidden rounded-lg shadow-xl">
+              <img 
+                src="https://cdn.poehali.dev/files/8ef4285b-bc4d-42e0-b63a-159de1b97b2f.jpg" 
+                alt="MINO café interior" 
+                className="w-full h-full object-cover"
+              />
             </div>
-            <h3 className="font-serif text-xl font-bold mb-3">Особая обжарка</h3>
-            <p className="text-mino-charcoal/80">
-              Мы сами обжариваем кофе, тщательно подбирая зерна со всего мира для создания уникального вкусового профиля.
-            </p>
-          </div>
-          
-          <div className="bg-mino-beige rounded-lg p-8 shadow-sm transform transition-transform hover:scale-105">
-            <div className="w-12 h-12 bg-mino-green/20 rounded-full flex items-center justify-center mb-4">
-              <span className="text-2xl">🍡</span>
-            </div>
-            <h3 className="font-serif text-xl font-bold mb-3">Авторская кухня</h3>
-            <p className="text-mino-charcoal/80">
-              Наше меню сочетает традиционные японские десерты с современными кофейными напитками для неповторимого опыта.
-            </p>
+            <div className="absolute -bottom-6 -left-6 md:-left-10 w-32 md:w-48 aspect-square bg-mino-green/10 rounded-lg -z-10"></div>
           </div>
         </div>
       </div>

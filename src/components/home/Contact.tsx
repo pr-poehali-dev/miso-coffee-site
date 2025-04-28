@@ -1,61 +1,99 @@
-import { Button } from "@/components/ui/button";
-import { MapPin, Clock, Phone } from "lucide-react";
+
+import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+
+const ContactItem = ({ 
+  icon, 
+  title, 
+  details 
+}: { 
+  icon: React.ReactNode; 
+  title: string; 
+  details: React.ReactNode; 
+}) => (
+  <div className="flex space-x-4 mb-8">
+    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-mino-green/10 flex items-center justify-center text-mino-green">
+      {icon}
+    </div>
+    <div>
+      <h3 className="font-serif text-lg font-medium text-mino-charcoal mb-1">{title}</h3>
+      <div className="text-mino-coffee">{details}</div>
+    </div>
+  </div>
+);
 
 const Contact = () => {
   return (
-    <section className="py-20 bg-white">
+    <section id="contact" className="py-16 md:py-24 bg-mino-darkBeige/20">
       <div className="mino-container">
-        <div className="text-center mb-12">
-          <h2 className="mino-heading text-3xl md:text-4xl font-bold mb-4">Посетите нас</h2>
-          <div className="w-24 h-1 bg-mino-green mx-auto"></div>
+        <div className="text-center mb-16">
+          <h2 className="mino-heading text-3xl md:text-4xl font-bold mb-4">
+            Как нас найти
+          </h2>
+          <p className="text-mino-coffee max-w-2xl mx-auto">
+            Мы всегда рады видеть вас в нашем кафе. Приходите насладиться особенной атмосферой MINO
+          </p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="bg-mino-beige rounded-lg p-8 shadow-sm">
-            <h3 className="font-serif text-2xl font-bold mb-6">Контактная информация</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-mino-green mt-1 mr-3" />
-                <div>
-                  <h4 className="font-medium mb-1">Адрес</h4>
-                  <p className="text-mino-charcoal/80">ул. Пушкина, 10<br />Москва, 123456</p>
-                </div>
-              </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="order-2 md:order-1">
+            <div className="p-6 bg-white rounded-lg shadow-sm">
+              <ContactItem 
+                icon={<MapPin size={24} />}
+                title="Адрес"
+                details={
+                  <p>ул. Тверская, 12<br />Москва, 125009</p>
+                }
+              />
               
-              <div className="flex items-start">
-                <Clock className="w-5 h-5 text-mino-green mt-1 mr-3" />
-                <div>
-                  <h4 className="font-medium mb-1">Часы работы</h4>
-                  <p className="text-mino-charcoal/80">
-                    Пн-Пт: 8:00 - 21:00<br />
-                    Сб-Вс: 9:00 - 22:00
-                  </p>
-                </div>
-              </div>
+              <ContactItem 
+                icon={<Clock size={24} />}
+                title="Часы работы"
+                details={
+                  <p>Ежедневно<br />с 8:00 до 22:00</p>
+                }
+              />
               
-              <div className="flex items-start">
-                <Phone className="w-5 h-5 text-mino-green mt-1 mr-3" />
-                <div>
-                  <h4 className="font-medium mb-1">Телефон</h4>
-                  <p className="text-mino-charcoal/80">+7 (123) 456-7890</p>
-                </div>
-              </div>
+              <ContactItem 
+                icon={<Phone size={24} />}
+                title="Телефон"
+                details={
+                  <a href="tel:+74951234567" className="hover:text-mino-green transition-colors">
+                    +7 (495) 123-45-67
+                  </a>
+                }
+              />
+              
+              <ContactItem 
+                icon={<Mail size={24} />}
+                title="Email"
+                details={
+                  <a href="mailto:hello@minocafe.ru" className="hover:text-mino-green transition-colors">
+                    hello@minocafe.ru
+                  </a>
+                }
+              />
             </div>
             
             <div className="mt-8">
-              <Button className="bg-mino-green hover:bg-mino-darkGreen w-full">
-                Забронировать столик
-              </Button>
+              <button className="mino-button w-full py-3 flex items-center justify-center space-x-2">
+                <span>Забронировать столик</span>
+              </button>
             </div>
           </div>
           
-          <div className="rounded-lg overflow-hidden shadow-sm h-[400px]">
-            <img 
-              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80" 
-              alt="MINO Кофейня" 
-              className="w-full h-full object-cover"
-            />
+          <div className="order-1 md:order-2">
+            <div className="relative rounded-lg overflow-hidden h-full min-h-[300px]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.347525141961!2d37.60335811592621!3d55.76172098055704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a451f8555a5%3A0xd8f58c22e41856f9!2z0KLQstC10YDRgdC60LDRjyDRg9C7LiwgMTIsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMjUwMDk!5e0!3m2!1sru!2sru!4v1656421703788!5m2!1sru!2sru" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, position: 'absolute', top: 0, left: 0, height: '100%' }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="MINO café на карте"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

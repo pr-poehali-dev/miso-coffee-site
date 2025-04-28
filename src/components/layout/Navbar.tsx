@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
@@ -40,9 +41,11 @@ const Navbar = () => {
     >
       <div className="mino-container flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <span className="font-serif text-2xl font-bold tracking-wider text-mino-charcoal">
-            MINO
-          </span>
+          <img 
+            src="https://cdn.poehali.dev/files/8ef4285b-bc4d-42e0-b63a-159de1b97b2f.jpg" 
+            alt="MINO café" 
+            className="h-10"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -59,31 +62,31 @@ const Navbar = () => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/menu">
+                <a href="#menu">
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                   >
                     Меню
                   </NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/about">
+                <a href="#about">
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                   >
                     О нас
                   </NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/contact">
+                <a href="#contact">
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
                   >
                     Контакты
                   </NavigationMenuLink>
-                </Link>
+                </a>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -113,27 +116,27 @@ const Navbar = () => {
             >
               Главная
             </Link>
-            <Link
-              to="/menu"
+            <a
+              href="#menu"
               className="py-2 px-8 text-mino-charcoal hover:bg-mino-darkBeige transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Меню
-            </Link>
-            <Link
-              to="/about"
+            </a>
+            <a
+              href="#about"
               className="py-2 px-8 text-mino-charcoal hover:bg-mino-darkBeige transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               О нас
-            </Link>
-            <Link
-              to="/contact"
+            </a>
+            <a
+              href="#contact"
               className="py-2 px-8 text-mino-charcoal hover:bg-mino-darkBeige transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Контакты
-            </Link>
+            </a>
           </nav>
         </div>
       )}
